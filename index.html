@@ -7,16 +7,106 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <title>Frontend Mentor | Results summary component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-   
-   
-   .attribution {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size: 1.125rem;
+      background-color: hsl(221, 100%, 96%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex: 1;
+    }
+
+    .container {
+      max-width: 736px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .results {
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      border-radius: 20px;
+      padding: 30px;
+      color: hsl(0, 0%, 100%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    .circle {
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .results>h2 {
+      color: hsl(241, 100%, 89%);
+      font-size: 1rem;
+    }
+
+    .score-number {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    .score-total {
+      color: hsl(241, 100%, 89%);
+      font-size: .8rem;
+      margin: 0;
+    }
+.result-feedback{
+  font-size: 2rem;
+  margin: 0;
+}
+.result-description{
+  color: hsl(241, 100%, 89%);
+  font-size: .9rem;
+  margin: 0;
+}
+
+.summary{
+ padding: 30px; 
+ display: flex; 
+ flex-direction: column;
+ gap: 20px;
+}
+
+.summary > h2{
+  color: hsl(224, 30%, 27%);
+}
+    .attribution {
       font-size: 0.6875rem;
       text-align: center;
+      padding: 10px 0;
     }
 
     .attribution a {
@@ -34,8 +124,8 @@
         <p class="score-number">76</p>
         <p class="score-total">of 100</p>
       </div>
-        <p class="result-feedback">Great</p>
-        <p class = "result-description">You scored higher than 65% of the people who have taken these tests.</p>
+      <p class="result-feedback">Great</p>
+      <p class="result-description">You scored higher than 65% of the people who have taken these tests.</p>
     </div>
 
     <div class="summary">
@@ -43,27 +133,27 @@
 
       <div class="categories">
         <div class="reaction">
-         <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon"> 
-         <p class = "category">Reaction</p>
-         <p class = "score"><span> 80 </span>/ 100</p>
+          <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
+          <p class="category">Reaction</p>
+          <p class="score"><span> 80 </span>/ 100</p>
         </div>
 
         <div class="memory">
-          <img src="./assets/images/icon-memory.svg" alt="Memory Icon"> 
-         <p class = "category">Memory</p>
-         <p class = "score"><span>92 </span>/ 100</p>
+          <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
+          <p class="category">Memory</p>
+          <p class="score"><span>92 </span>/ 100</p>
         </div>
 
         <div class="verbal">
-        <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon"> 
-         <p class = "category">Verbal</p>
-         <p class = "score"><span> 61 </span>/ 100</p>
+          <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
+          <p class="category">Verbal</p>
+          <p class="score"><span> 61 </span>/ 100</p>
         </div>
 
         <div class="visual">
-          <img src="./assets/images/icon-visual.svg" alt="Visual Icon"> 
-         <p class = "category">Visual</p>
-         <p class = "score"><span>72</span>/ 100</p>
+          <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
+          <p class="category">Visual</p>
+          <p class="score"><span>72</span>/ 100</p>
         </div>
 
       </div>
@@ -72,7 +162,7 @@
     </div>
 
   </div>
-     
+
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Justyna Nowak-Szrajnert</a>.
