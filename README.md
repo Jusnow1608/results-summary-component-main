@@ -121,7 +121,7 @@ I collaborated with Gemini AI as an interactive peer code-reviewer during this p
 
 - How I used it: I used the AI assistant to review my code structure, debug minor CSS issues (like a sneaky double semicolon), and brainstorm the best layout adjustments for the mobile view.
 
-- What worked well: The collaborative refactoring process was excellent. It helped me transform general <div> structures into highly semantic <ul>/<li> lists and guided me toward creative solutions like using negative margins for precise optical spacing.
+- What worked well: The collaborative refactoring process was excellent. It helped me transform general <div> structures into highly semantic `<ul>/<li>` lists and guided me toward creative solutions like using negative margins for precise optical spacing.
 
 ## Author
 
