@@ -33,7 +33,7 @@ Users should be able to:
 *The final 2-column desktop view showing the precise visual balance, adjusted circle scale, typography hierarchy, and compressed spacings.*
 
 #### Active States
-![Mobile Layout](./solution/solution-mobile.jpg)
+![Mobile Layout](./solution/solution-active-states.jpg)
 
 *The responsive full-width single-column layout optimized for smaller viewports, featuring custom padding adjustments and negative spacing overrides.*
 
