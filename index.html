@@ -24,13 +24,24 @@
       font-size: 1.125rem;
       background-color: hsl(221, 100%, 96%);
       margin: 0;
-      padding: 0;
+      padding: 20px;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      width: 100%;
-      flex: 1;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
     }
 
     .container {
@@ -68,9 +79,13 @@
       padding: 0;
     }
 
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
     .results>h2 {
       color: hsl(241, 100%, 89%);
-      font-size: 1rem;
     }
 
     .score-number {
@@ -80,29 +95,124 @@
 
     .score-total {
       color: hsl(241, 100%, 89%);
-      font-size: .8rem;
+      font-size: 1rem;
       margin: 0;
     }
-.result-feedback{
-  font-size: 2rem;
-  margin: 0;
-}
-.result-description{
-  color: hsl(241, 100%, 89%);
-  font-size: .9rem;
-  margin: 0;
-}
 
-.summary{
- padding: 30px; 
- display: flex; 
- flex-direction: column;
- gap: 20px;
-}
+    .result-feedback {
+      font-size: 2rem;
+      margin: 0;
+    }
 
-.summary > h2{
-  color: hsl(224, 30%, 27%);
-}
+    .result-description {
+      color: hsl(241, 100%, 89%);
+      font-size: 1rem;
+      margin: 0 30px;
+    }
+
+    .summary {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .summary>h2 {
+      color: hsl(224, 30%, 27%);
+    }
+
+    .categories {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .categories>div {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      border-radius: 10px;
+      align-items: center;
+    }
+
+    .category-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reaction>.category-box {
+      color: hsl(0, 100%, 67%);
+    }
+
+    .reaction {
+      background-color: hsla(0, 100%, 67%, .1);
+    }
+
+    .memory>.category-box {
+      color: hsl(39, 100%, 56%);
+    }
+
+    .memory {
+      background-color: hsla(39, 100%, 56%, .1);
+    }
+
+    .verbal>.category-box {
+      color: hsl(166, 100%, 37%);
+    }
+
+    .verbal {
+      background-color: hsla(166, 100%, 37%, .1);
+    }
+
+    .visual>.category-box {
+      color: hsl(234, 85%, 45%);
+    }
+
+    .visual {
+      background-color: hsla(234, 85%, 45%, .1);
+    }
+
+    .category {
+      font-weight: 700;
+    }
+
+    .categories p {
+      margin: 0;
+    }
+
+    .score {
+      color: darkgrey;
+      font-weight: 700;
+    }
+
+    span {
+      color: hsl(224, 30%, 27%);
+      font-weight: 700;
+    }
+
+    .continue-button {
+      border-radius: 30px;
+      border: none;
+      padding: 20px;
+      color: hsl(0, 0%, 100%);
+      font-size: 1rem;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      background-color: hsl(224, 30%, 27%);
+    }
+
+    .continue-button:hover {
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    }
+
+    .continue-button:focus-visible {
+      outline: 3px dashed hsl(241, 81%, 54%);
+      outline-offset: 4px;
+    }
+
     .attribution {
       font-size: 0.6875rem;
       text-align: center;
@@ -112,11 +222,50 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+    @media(max-width: 600px){
+      
+      body{
+        padding: 0;
+        justify-content: flex-start;
+      }
+      .container{
+        grid-template-columns: 1fr;
+        border-radius: 0;
+      }
+      .results{
+        border-radius: 0 0 30px 30px;
+        padding: 24px;
+        gap: 16px;
+      }
+      .circle{
+        width: 130px;
+        height:130px;
+      }
+      .score-number{
+        font-size: 3rem;
+      }
+      .result-feedback{
+        font-size: 1.5rem;
+      }
+      .summary{
+        padding: 12px 24px;
+        gap:16px;
+      }
+      .categories{
+        gap:12px;
+      }
+      .categories>div{
+        padding: 12px;;
+      }
+      .continue-button{
+        padding:16px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1>Results Summary</h1>
+  <h1 class="visually-hidden">Results Summary</h1>
   <div class="container">
     <div class="results">
       <h2>Your Result</h2>
@@ -133,27 +282,35 @@
 
       <div class="categories">
         <div class="reaction">
-          <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
-          <p class="category">Reaction</p>
-          <p class="score"><span> 80 </span>/ 100</p>
+          <div class="category-box">
+            <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
+            <p class="category">Reaction</p>
+          </div>
+          <p class="score"><span> 80</span> / 100</p>
         </div>
 
         <div class="memory">
-          <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
-          <p class="category">Memory</p>
-          <p class="score"><span>92 </span>/ 100</p>
+          <div class="category-box">
+            <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
+            <p class="category">Memory</p>
+          </div>
+          <p class="score"><span>92</span> / 100</p>
         </div>
 
         <div class="verbal">
-          <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
-          <p class="category">Verbal</p>
-          <p class="score"><span> 61 </span>/ 100</p>
+          <div class="category-box">
+            <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
+            <p class="category">Verbal</p>
+          </div>
+          <p class="score"><span> 61</span> / 100</p>
         </div>
 
         <div class="visual">
-          <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
-          <p class="category">Visual</p>
-          <p class="score"><span>72</span>/ 100</p>
+          <div class="category-box">
+            <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
+            <p class="category">Visual</p>
+          </div>
+          <p class="score"><span>72</span> / 100</p>
         </div>
 
       </div>
