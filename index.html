@@ -125,9 +125,11 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      list-style: none;
+      padding: 0;
     }
 
-    .categories>div {
+    .categories>li {
       display: flex;
       justify-content: space-between;
       padding: 15px;
@@ -247,15 +249,22 @@
       .result-feedback{
         font-size: 1.5rem;
       }
+      .result-description{
+        margin: 0 15px;
+      }
       .summary{
-        padding: 12px 24px;
+        padding: 24px;
         gap:16px;
       }
+      .summary > h2 {
+    margin-top: -4px;    
+    margin-bottom: -4px; 
+  }
       .categories{
         gap:12px;
       }
-      .categories>div{
-        padding: 12px;;
+      .categories>li{
+        padding: 12px;
       }
       .continue-button{
         padding:16px;
@@ -280,40 +289,40 @@
     <div class="summary">
       <h2>Summary</h2>
 
-      <div class="categories">
-        <div class="reaction">
+      <ul class="categories">
+        <li class="reaction">
           <div class="category-box">
             <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
             <p class="category">Reaction</p>
           </div>
           <p class="score"><span> 80</span> / 100</p>
-        </div>
+        </li>
 
-        <div class="memory">
+        <li class="memory">
           <div class="category-box">
             <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
             <p class="category">Memory</p>
           </div>
           <p class="score"><span>92</span> / 100</p>
-        </div>
+        </li>
 
-        <div class="verbal">
+        <li class="verbal">
           <div class="category-box">
             <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
             <p class="category">Verbal</p>
           </div>
           <p class="score"><span> 61</span> / 100</p>
-        </div>
+        </li>
 
-        <div class="visual">
+        <li class="visual">
           <div class="category-box">
             <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
             <p class="category">Visual</p>
           </div>
           <p class="score"><span>72</span> / 100</p>
-        </div>
+        </li>
 
-      </div>
+      </ul>
 
       <button class="continue-button">Continue</button>
     </div>
