@@ -24,7 +24,7 @@
       font-size: 1.125rem;
       background-color: hsl(221, 100%, 96%);
       margin: 0;
-      padding: 20px;
+      padding: 1.25rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -62,14 +62,14 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .circle {
       background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-      width: 150px;
-      height: 150px;
+      width: 172px;
+      height: 172px;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -89,8 +89,10 @@
     }
 
     .score-number {
-      font-size: 4rem;
+      font-size: 4.5rem;
       margin: 0;
+      font-weight: 800;
+      line-height: 1;
     }
 
     .score-total {
@@ -100,25 +102,29 @@
     }
 
     .result-feedback {
-      font-size: 2rem;
+      font-size: 1.75rem;
       margin: 0;
+      font-weight: 700;
     }
 
     .result-description {
       color: hsl(241, 100%, 89%);
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin: 0 30px;
+      line-height: 1.4;
     }
 
     .summary {
       padding: 30px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: flex-start;
+      gap: 14px;
     }
 
     .summary>h2 {
       color: hsl(224, 30%, 27%);
+      margin-bottom: -8px;
     }
 
     .categories {
@@ -132,7 +138,7 @@
     .categories>li {
       display: flex;
       justify-content: space-between;
-      padding: 15px;
+      padding: 14px;
       border-radius: 10px;
       align-items: center;
     }
@@ -204,6 +210,7 @@
       width: 100%;
       cursor: pointer;
       background-color: hsl(224, 30%, 27%);
+      margin-top: auto;
     }
 
     .continue-button:hover {
@@ -224,111 +231,124 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
-    @media(max-width: 600px){
-      
-      body{
+
+    @media(max-width: 37.5em) {
+
+      body {
         padding: 0;
         justify-content: flex-start;
       }
-      .container{
+
+      .container {
         grid-template-columns: 1fr;
         border-radius: 0;
       }
-      .results{
+
+      .results {
         border-radius: 0 0 30px 30px;
         padding: 24px;
         gap: 16px;
       }
-      .circle{
-        width: 130px;
-        height:130px;
+
+      .circle {
+        width: 140px;
+        height: 140px;
       }
-      .score-number{
-        font-size: 3rem;
+
+      .score-number {
+        font-size: 3.5rem;
       }
-      .result-feedback{
+
+      .result-feedback {
         font-size: 1.5rem;
       }
-      .result-description{
+
+      .result-description {
         margin: 0 15px;
       }
-      .summary{
+
+      .summary {
         padding: 24px;
-        gap:16px;
+        gap: 16px;
       }
-      .summary > h2 {
-    margin-top: -4px;    
-    margin-bottom: -4px; 
-  }
-      .categories{
-        gap:12px;
+
+      .summary>h2 {
+        margin-top: -4px;
+        margin-bottom: -8px;
       }
-      .categories>li{
+
+      .categories {
+        gap: 12px;
+      }
+
+      .categories>li {
         padding: 12px;
       }
-      .continue-button{
-        padding:16px;
+
+      .continue-button {
+        padding: 16px;
       }
     }
   </style>
 </head>
 
 <body>
-  <h1 class="visually-hidden">Results Summary</h1>
-  <div class="container">
-    <div class="results">
-      <h2>Your Result</h2>
-      <div class="circle">
-        <p class="score-number">76</p>
-        <p class="score-total">of 100</p>
+  <main>
+    <h1 class="visually-hidden">Results Summary</h1>
+    <div class="container">
+      <div class="results">
+        <h2>Your Result</h2>
+        <div class="circle">
+          <p class="score-number">76</p>
+          <p class="score-total">of 100</p>
+        </div>
+        <p class="result-feedback">Great</p>
+        <p class="result-description">You scored higher than 65% of the people who have taken these tests.</p>
       </div>
-      <p class="result-feedback">Great</p>
-      <p class="result-description">You scored higher than 65% of the people who have taken these tests.</p>
+
+      <div class="summary">
+        <h2>Summary</h2>
+
+        <ul class="categories">
+          <li class="reaction">
+            <div class="category-box">
+              <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
+              <p class="category">Reaction</p>
+            </div>
+            <p class="score"><span> 80</span> / 100</p>
+          </li>
+
+          <li class="memory">
+            <div class="category-box">
+              <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
+              <p class="category">Memory</p>
+            </div>
+            <p class="score"><span>92</span> / 100</p>
+          </li>
+
+          <li class="verbal">
+            <div class="category-box">
+              <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
+              <p class="category">Verbal</p>
+            </div>
+            <p class="score"><span> 61</span> / 100</p>
+          </li>
+
+          <li class="visual">
+            <div class="category-box">
+              <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
+              <p class="category">Visual</p>
+            </div>
+            <p class="score"><span>72</span> / 100</p>
+          </li>
+
+        </ul>
+
+        <button type = "button" class="continue-button">Continue</button>
+      </div>
+
     </div>
-
-    <div class="summary">
-      <h2>Summary</h2>
-
-      <ul class="categories">
-        <li class="reaction">
-          <div class="category-box">
-            <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
-            <p class="category">Reaction</p>
-          </div>
-          <p class="score"><span> 80</span> / 100</p>
-        </li>
-
-        <li class="memory">
-          <div class="category-box">
-            <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
-            <p class="category">Memory</p>
-          </div>
-          <p class="score"><span>92</span> / 100</p>
-        </li>
-
-        <li class="verbal">
-          <div class="category-box">
-            <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
-            <p class="category">Verbal</p>
-          </div>
-          <p class="score"><span> 61</span> / 100</p>
-        </li>
-
-        <li class="visual">
-          <div class="category-box">
-            <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
-            <p class="category">Visual</p>
-          </div>
-          <p class="score"><span>72</span> / 100</p>
-        </li>
-
-      </ul>
-
-      <button class="continue-button">Continue</button>
-    </div>
-
-  </div>
-
+  </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Justyna Nowak-Szrajnert</a>.
