@@ -13,6 +13,9 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    :root {
+  --bg-neutral: hsl(221, 100%, 96%);
+}
     *,
     *::before,
     *::after {
@@ -22,7 +25,7 @@
     body {
       font-family: "Hanken Grotesk", sans-serif;
       font-size: 1.125rem;
-      background-color: hsl(221, 100%, 96%);
+      background-color: var(--bg-neutral);
       margin: 0;
       padding: 1.25rem;
       min-height: 100vh;
@@ -57,13 +60,13 @@
     .results {
       background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
       border-radius: 20px;
-      padding: 30px;
+      padding: 1.875rem;
       color: hsl(0, 0%, 100%);
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 20px;
+      gap: 1.25rem;
     }
 
     .circle {
@@ -110,27 +113,27 @@
     .result-description {
       color: hsl(241, 100%, 89%);
       font-size: 1.1rem;
-      margin: 0 30px;
+      margin: 0 1.875rem;
       line-height: 1.4;
     }
 
     .summary {
-      padding: 30px;
+      padding: 1.875rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 14px;
+      gap: .875rem;
     }
 
     .summary>h2 {
       color: hsl(224, 30%, 27%);
-      margin-bottom: -8px;
+      margin-block-end: -.5rem;
     }
 
     .categories {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 1rem;
       list-style: none;
       padding: 0;
     }
@@ -138,8 +141,8 @@
     .categories>li {
       display: flex;
       justify-content: space-between;
-      padding: 14px;
-      border-radius: 10px;
+      padding: .875rem;
+      border-radius: 0.625rem;
       align-items: center;
     }
 
@@ -203,14 +206,14 @@
     .continue-button {
       border-radius: 30px;
       border: none;
-      padding: 20px;
+      padding: 1.25rem;
       color: hsl(0, 0%, 100%);
       font-size: 1rem;
       font-weight: 700;
       width: 100%;
       cursor: pointer;
       background-color: hsl(224, 30%, 27%);
-      margin-top: auto;
+      margin-block-start: auto;
     }
 
     .continue-button:hover {
@@ -219,13 +222,13 @@
 
     .continue-button:focus-visible {
       outline: 3px dashed hsl(241, 81%, 54%);
-      outline-offset: 4px;
+      outline-offset: .25rem;
     }
 
     .attribution {
       font-size: 0.6875rem;
       text-align: center;
-      padding: 10px 0;
+      padding: .625rem 0;
     }
 
     .attribution a {
@@ -245,9 +248,9 @@
       }
 
       .results {
-        border-radius: 0 0 30px 30px;
-        padding: 24px;
-        gap: 16px;
+        border-radius: 0 0 1.875rem 1.875rem;
+        padding: 1.5rem;
+        gap: 1rem;
       }
 
       .circle {
@@ -264,29 +267,29 @@
       }
 
       .result-description {
-        margin: 0 15px;
+        margin: 0 .9375rem;
       }
 
       .summary {
-        padding: 24px;
-        gap: 16px;
+        padding: 1.5rem;
+        gap: 1rem;
       }
 
       .summary>h2 {
-        margin-top: -4px;
-        margin-bottom: -8px;
+        margin-block-start: -.25rem;
+        margin-block-end: -.5rem;
       }
 
       .categories {
-        gap: 12px;
+        gap: .75rem;
       }
 
       .categories>li {
-        padding: 12px;
+        padding: .75rem;
       }
 
       .continue-button {
-        padding: 16px;
+        padding: 1rem;
       }
     }
   </style>

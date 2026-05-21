@@ -43,7 +43,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/results-summary-component-built-with-grid-and-flexbox-clean-html-g5M59R5N_Q)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/results-summary-component-built-with-semantic-html-css-grid-flexbox-vF6QzsjKb7)
 - Live Site URL: [GitHub Pages Live Preview](https://jusnow1608.github.io/results-summary-component-main/)
 
 ## My process
