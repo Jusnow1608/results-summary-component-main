@@ -13,8 +13,23 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    :root {
-  --bg-neutral: hsl(221, 100%, 96%);
+  :root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-bg-neutral: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+  --gradient-results: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --gradient-circle: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+  --color-reaction: hsl(0, 100%, 67%); 
+  --color-memory: hsl(39, 100%, 56%);
+  --color-verbal: hsl(166, 100%, 37%);
+  --color-visual: hsl(234, 85%, 45%);
+
+  --background-reaction: hsla(0, 100%, 67%,.1);
+  --background-memory: hsla(39, 100%, 56%, .1);
+  --background-verbal: hsla(166, 100%, 37%, .1);
+  --background-visual: hsla(234, 85%, 45%, .1);
 }
     *,
     *::before,
@@ -25,7 +40,7 @@
     body {
       font-family: "Hanken Grotesk", sans-serif;
       font-size: 1.125rem;
-      background-color: var(--bg-neutral);
+      background-color: var(--color-bg-neutral);
       margin: 0;
       padding: 1.25rem;
       min-height: 100vh;
@@ -33,7 +48,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 1.25rem;
+      font-weight: 500;
     }
 
     .visually-hidden {
@@ -52,16 +68,16 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      background-color: hsl(0, 0%, 100%);
-      border-radius: 20px;
+      background-color: var(--color-white);
+      border-radius: 1.25rem;
       overflow: hidden;
     }
 
     .results {
-      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-      border-radius: 20px;
+      background: var(--gradient-results);
+      border-radius: 1.25rem;
       padding: 1.875rem;
-      color: hsl(0, 0%, 100%);
+      color: var(--color-white);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -70,7 +86,7 @@
     }
 
     .circle {
-      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      background: var(--gradient-circle);
       width: 172px;
       height: 172px;
       border-radius: 50%;
@@ -88,7 +104,7 @@
     }
 
     .results>h2 {
-      color: hsl(241, 100%, 89%);
+      color: var(--color-light-lavender);
     }
 
     .score-number {
@@ -99,7 +115,7 @@
     }
 
     .score-total {
-      color: hsl(241, 100%, 89%);
+      color:var(--color-light-lavender);
       font-size: 1rem;
       margin: 0;
     }
@@ -111,7 +127,7 @@
     }
 
     .result-description {
-      color: hsl(241, 100%, 89%);
+      color: var(--color-light-lavender);
       font-size: 1.1rem;
       margin: 0 1.875rem;
       line-height: 1.4;
@@ -126,7 +142,7 @@
     }
 
     .summary>h2 {
-      color: hsl(224, 30%, 27%);
+      color: var(--color-dark-gray-blue);
       margin-block-end: -.5rem;
     }
 
@@ -150,39 +166,39 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: .625rem;
     }
 
     .reaction>.category-box {
-      color: hsl(0, 100%, 67%);
+      color: var(--color-reaction);
     }
 
     .reaction {
-      background-color: hsla(0, 100%, 67%, .1);
+      background-color: var(--background-reaction);
     }
 
     .memory>.category-box {
-      color: hsl(39, 100%, 56%);
+      color: var(--color-memory);
     }
 
     .memory {
-      background-color: hsla(39, 100%, 56%, .1);
+      background-color: var(--background-memory);
     }
 
     .verbal>.category-box {
-      color: hsl(166, 100%, 37%);
+      color: var(--color-verbal);
     }
 
     .verbal {
-      background-color: hsla(166, 100%, 37%, .1);
+      background-color: var(--background-verbal);
     }
 
     .visual>.category-box {
-      color: hsl(234, 85%, 45%);
+      color: var(--color-visual);
     }
 
     .visual {
-      background-color: hsla(234, 85%, 45%, .1);
+      background-color: var(--background-visual);
     }
 
     .category {
@@ -198,26 +214,26 @@
       font-weight: 700;
     }
 
-    span {
-      color: hsl(224, 30%, 27%);
+    .score-value {
+      color: var(--color-dark-gray-blue);
       font-weight: 700;
     }
 
     .continue-button {
-      border-radius: 30px;
+      border-radius: 1.875rem;
       border: none;
       padding: 1.25rem;
-      color: hsl(0, 0%, 100%);
+      color: var(--color-white);
       font-size: 1rem;
       font-weight: 700;
       width: 100%;
       cursor: pointer;
-      background-color: hsl(224, 30%, 27%);
+      background-color: var(--color-dark-gray-blue);
       margin-block-start: auto;
     }
 
     .continue-button:hover {
-      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      background: var(--gradient-results);
     }
 
     .continue-button:focus-visible {
@@ -226,7 +242,7 @@
     }
 
     .attribution {
-      font-size: 0.6875rem;
+      font-size: .6875rem;
       text-align: center;
       padding: .625rem 0;
     }
@@ -318,7 +334,7 @@
               <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
               <p class="category">Reaction</p>
             </div>
-            <p class="score"><span> 80</span> / 100</p>
+            <p class="score"><span class ="score-value">80</span> / 100</p>
           </li>
 
           <li class="memory">
@@ -326,7 +342,7 @@
               <img src="./assets/images/icon-memory.svg" alt="Memory Icon">
               <p class="category">Memory</p>
             </div>
-            <p class="score"><span>92</span> / 100</p>
+            <p class="score"><span class ="score-value">92</span> / 100</p>
           </li>
 
           <li class="verbal">
@@ -334,7 +350,7 @@
               <img src="./assets/images/icon-verbal.svg" alt="Verbal Icon">
               <p class="category">Verbal</p>
             </div>
-            <p class="score"><span> 61</span> / 100</p>
+            <p class="score"><span class ="score-value">61</span> / 100</p>
           </li>
 
           <li class="visual">
@@ -342,7 +358,7 @@
               <img src="./assets/images/icon-visual.svg" alt="Visual Icon">
               <p class="category">Visual</p>
             </div>
-            <p class="score"><span>72</span> / 100</p>
+            <p class="score"><span class ="score-value">72</span> / 100</p>
           </li>
 
         </ul>
