@@ -1,0 +1,297 @@
+ :root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-bg-neutral: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+  --color-dark-gray: hsl(0, 0%, 66%);
+  --gradient-results: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --gradient-circle: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+  --color-reaction: hsl(0, 100%, 67%); 
+  --color-memory: hsl(39, 100%, 56%);
+  --color-verbal: hsl(166, 100%, 37%);
+  --color-visual: hsl(234, 85%, 45%);
+
+  --color-bg-reaction: hsla(0, 100%, 67%,.1);
+  --color-bg-memory: hsla(39, 100%, 56%, .1);
+  --color-bg-verbal: hsla(166, 100%, 37%, .1);
+  --color-bg-visual: hsla(234, 85%, 45%, .1);
+
+  --color-focus-visible: hsl(241, 81%, 54%);
+  --color-footer: hsl(228, 45%, 44%);
+}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hanken Grotesk", sans-serif;
+      font-size: 1.125rem;
+      background-color: var(--color-bg-neutral);
+      margin: 0;
+      padding: 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      font-weight: 500;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 0.0625rem;
+      height: 0.0625rem;
+      padding: 0;
+      margin: -0.0625rem;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .container {
+      max-width: 37.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background-color: var(--color-white);
+      border-radius: 1.25rem;
+      overflow: hidden;
+    }
+
+    .results {
+      background: var(--gradient-results);
+      border-radius: 1.25rem;
+      padding: 1.875rem;
+      color: var(--color-white);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .circle {
+      background: var(--gradient-circle);
+      width: 10.75rem;
+      height: 10.75rem;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .results>h2 {
+      color: var(--color-light-lavender);
+    }
+
+    .score-number {
+      font-size: 4.5rem;
+      margin: 0;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-total {
+      color:var(--color-light-lavender);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .result-feedback {
+      font-size: 1.75rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .result-description {
+      color: var(--color-light-lavender);
+      font-size: 1.1rem;
+      max-width: 16rem;      
+      margin-inline: auto;  
+      margin-block: 0;
+      line-height: 1.4;
+    }
+
+    .summary {
+      padding: 1.875rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: .875rem;
+    }
+
+    .summary>h2 {
+      color: var(--color-dark-gray-blue);
+      margin-block-end: -.5rem;
+    }
+
+    .categories {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .categories>li {
+      display: flex;
+      justify-content: space-between;
+      padding: .875rem;
+      border-radius: 0.625rem;
+      align-items: center;
+    }
+
+    .category-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .625rem;
+    }
+
+    .reaction>.category-box {
+      color: var(--color-reaction);
+    }
+
+    .reaction {
+      background-color: var(--color-bg-reaction);
+    }
+
+    .memory>.category-box {
+      color: var(--color-memory);
+    }
+
+    .memory {
+      background-color: var(--color-bg-memory);
+    }
+
+    .verbal>.category-box {
+      color: var(--color-verbal);
+    }
+
+    .verbal {
+      background-color: var(--color-bg-verbal);
+    }
+
+    .visual>.category-box {
+      color: var(--color-visual);
+    }
+
+    .visual {
+      background-color: var(--color-bg-visual);
+    }
+
+    .category {
+      font-weight: 700;
+    }
+
+    .categories p {
+      margin: 0;
+    }
+
+    .score {
+      color: var(--color-dark-gray);
+      font-weight: 700;
+    }
+
+    .score-value {
+      color: var(--color-dark-gray-blue);
+      font-weight: 700;
+    }
+
+    .continue-button {
+      border-radius: 1.875rem;
+      border: none;
+      padding: 1.25rem;
+      color: var(--color-white);
+      font-size: 1rem;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      background-color: var(--color-dark-gray-blue);
+      margin-block-start: auto;
+    }
+
+    .continue-button:hover {
+      background: var(--gradient-results);
+    }
+
+    .continue-button:focus-visible {
+      outline: 0.1875rem dashed var(--color-focus-visible);
+      outline-offset: .25rem;
+    }
+
+    .attribution {
+      font-size: .6875rem;
+      text-align: center;
+      padding: .625rem 0;
+    }
+
+    .attribution a {
+      color: var(--color-footer);
+    }
+
+    @media(max-width: 37.5em) {
+
+      body {
+        padding: 0;
+        justify-content: flex-start;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+      }
+
+      .results {
+        border-radius: 0 0 1.875rem 1.875rem;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+
+      .circle {
+        width: 8.75rem;
+        height: 8.75rem;
+      }
+
+      .score-number {
+        font-size: 3.5rem;
+      }
+
+      .result-feedback {
+        font-size: 1.5rem;
+      }
+
+      .summary {
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+
+      .summary>h2 {
+        margin-block-start: -.25rem;
+        margin-block-end: -.5rem;
+      }
+
+      .categories {
+        gap: .75rem;
+      }
+
+      .categories>li {
+        padding: .75rem;
+      }
+
+      .continue-button {
+        padding: 1rem;
+      }
+    }
