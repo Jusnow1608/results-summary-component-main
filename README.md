@@ -15,7 +15,6 @@ This is a solution to the [Results summary component challenge on Frontend Mento
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge
@@ -30,16 +29,12 @@ Users should be able to:
 #### Desktop Layout
 ![Desktop Layout](./solution/solution-desktop.jpg)
 
-*The final 2-column desktop view showing the precise visual balance, adjusted circle scale, typography hierarchy, and compressed spacings.*
+*The final 2-column desktop view showing the precise visual balance, responsive scaling, typography hierarchy, and organized layout.*
 
-#### Active States
-![Mobile Layout](./solution/solution-active-states.jpg)
-
-*The responsive full-width single-column layout optimized for smaller viewports, featuring custom padding adjustments and negative spacing overrides.*
-
+#### Mobile Layout
 ![Mobile Layout](./solution/solution-mobile.jpg)
 
-*The responsive full-width single-column layout optimized for smaller viewports, featuring custom padding adjustments and negative spacing overrides.*
+*The responsive full-width single-column layout optimized for smaller viewports, featuring fluid padding and adjusted mobile-first spacing.*
 
 ### Links
 
@@ -50,78 +45,63 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup (`<ul>` and `<li>` structure for accessibility)
-- CSS Grid (for the main 2-column desktop layout)
-- Flexbox (for precise internal alignment of columns)
-- Responsive Mobile-first adjustments (`@media` queries)
-- Google Fonts (`Hanken Grotesk` configuration with proper font weights: 500, 700, 800)
-
+- Semantic HTML5 markup (including proper landmarks like `<main>` and structural lists)
+- CSS Grid (for the primary 2-column desktop component distribution)
+- Flexbox (for flexible inner alignment of scores and layout elements)
+- CSS Custom Properties (Variables) for centralized color management
+- Mobile-first approach & Media Queries utilizing relative units (`rem`, `em`) for accessibility
+- Google Fonts integration with performance-optimized `preconnect` links
 
 ### What I learned
 
-During this project, I significantly improved my understanding of layout balance and responsive web design. I learned how to use semantic elements like list items for data presentation, which improves accessibility (SEO and screen readers).
+During this project, I significantly advanced my understanding of modern CSS structuring, web accessibility, and performance optimization. 
+
+I practiced creating clean semantic structures by separating presentation from document flow. Wrapping core components into standalone, meaningful HTML tags ensures better compatibility with screen readers:
 
 ```html
-<ul class="categories">
-  <li class="reaction">
-    <div class="category-box">
-      <img src="./assets/images/icon-reaction.svg" alt="Reaction Icon">
-      <p class="category">Reaction</p>
+<main class="pricing-container">
+  <div class="pricing-plan">
     </div>
-    <p class="score"><span>80</span> / 100</p>
-  </li>
-  </ul>
+</main>
 ```
+On the CSS side, I mastered the usage of CSS variables to keep the code DRY (Don't Repeat Yourself) and applied consistent styling across global components:
 
-During this challenge, I learned the importance of visual hierarchy and fine-tuning spacing (UI precision). Initially, the component felt too stretched, but by analyzing the original design, I managed to compress the layout and improve text weights to achieve a near "pixel-perfect" match.
-
-One of the key takeaways was fine-tuning the spacing on smaller mobile screens using negative margins inside media queries to achieve a perfect optical balance:
-
-```css
-@media (max-width: 600px) {
-  .summary {
-    padding: 24px;
-    gap: 16px;
-  }
-  
-  .summary > h2 {
-    margin-top: -4px;    /* Pulls the heading closer to the fiolet box */
-    margin-bottom: -4px; /* Eliminates the large gap above the list */
-  }
-}
-```
-I also practiced switching container behaviors from `space-between` to `flex-start` combined with `margin-top: auto` to group elements tightly together while pushing the main button elegantly to the bottom:
-
-```css
-.summary {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Keeps the heading and list close together */
-  gap: 14px;
+```CSS
+:root {
+  --color-primary: hsl(245, 75%, 52%);
+  --color-bg-page: hsl(225, 100%, 94%);
+  --color-container-box-shadow: rgba(56, 41, 224, 0.04);
 }
 
-.continue-button {
-  margin-top: auto; /* Pushes the button to the absolute bottom of the white card */
+body {
+  background-color: var(--color-bg-page);
+}
+```
+I also learned how to handle background scaling effectively without stretching or distorting decorative patterns across ultra-wide viewports, utilizing CSS functions and properties correctly to preserve the user experience:
+
+```CSS
+body {
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
 }
 ```
 ### Continued development
-
 In future projects, I want to focus more on:
 
-- BEM (Block Element Modifier) methodology for cleaner CSS naming conventions.
+- Deepening knowledge of BEM (Block Element Modifier) methodology for predictable CSS architecture.
 
-- Deepening my knowledge of web accessibility (WCAG guidelines).
+- Advanced responsive layouts utilizing dynamic CSS functions like clamp(), min(), and max().
 
-- Working with JavaScript or JSON files to dynamically update data structures.
-
+- Expanding my knowledge on WCAG guidelines to deliver fully accessible digital products.
 
 ### AI Collaboration
-
 I collaborated with Gemini AI as an interactive peer code-reviewer during this project.
 
-- How I used it: I used the AI assistant to review my code structure, debug minor CSS issues (like a sneaky double semicolon), and brainstorm the best layout adjustments for the mobile view.
+- How I used it: I used the AI assistant to auditing my CSS code architecture, cleaning up unused components, and pinpointing layout bugs.
 
-- What worked well: The collaborative refactoring process was excellent. It helped me transform general <div> structures into highly semantic `<ul>/<li>` lists and guided me toward creative solutions like using negative margins for precise optical spacing.
+- What worked well: The collaborative refactoring process was excellent for catching critical syntax and logic slips. The assistant guided me to identify a missing semicolon in my custom properties, an unintended dot prefixing a body tag within media queries, and optimized an interactive button state where an abrupt hover border was triggering layout shift ("jumping text").
 
 ## Author
 
